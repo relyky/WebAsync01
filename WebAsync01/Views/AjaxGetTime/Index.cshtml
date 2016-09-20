@@ -1,0 +1,17 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+    ViewBag.Title = "使用 AjaxHelper 取得主機時間";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<label>主機時間：</label>
+<div id="server-time">Server Time</div>
+<p>
+    @Ajax.ActionLink("Get time", "Time", new AjaxOptions
+        {
+            UpdateTargetId = "server-time",
+            InsertionMode = InsertionMode.Replace
+        })
+</p>

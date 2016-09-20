@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav>
+        <div>
+            <ul>
+                <li>@Html.ActionLink("首頁", "Index", "Home")</li>
+                <li>@Html.ActionLink("關於", "About", "Home")</li>
+                <li>@Html.ActionLink("連絡方式", "Contact", "Home")</li>
+                <li>@Html.ActionLink("My Table 01", "Index", "MyTable01")</li>
+                <li>@Html.ActionLink("My Table 01 Async", "Index", "MyTable01Async")</li>
+                <li>@Html.ActionLink("使用 AjaxHelper 取主機時間", "Index", "AjaxGetTime")</li>
+                <li>@Html.ActionLink("Datetime Template 練習", "Index", "DateTimeT")</li>
+            </ul>
+        </div>
+    </nav>
+
+    <article>
+        <section>
+            @RenderBody()
+        </section>
+    </article>
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script> @* 放在script最後面才會生效。因為其基底是jQuery所以jQuery需先導入 *@
+</body>
+</html>

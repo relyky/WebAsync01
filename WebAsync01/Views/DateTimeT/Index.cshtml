@@ -1,0 +1,17 @@
+﻿@model WebAsync01.Models.UserProfile
+@{
+    ViewBag.Title = "簡單的 DateTime Template 練習";
+}
+
+<!DOCTYPE html>
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+@Html.Label("Display Template")
+@Html.DisplayFor(model => model.Birthday)
+</div>
+<div>
+@Html.Label("Editor Template")
+@Html.EditorFor(model => model.Birthday)
+</div>
